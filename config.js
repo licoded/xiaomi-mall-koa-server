@@ -14,9 +14,9 @@ module.exports = {
   // 数据库连接设置
   dbConfig: {
     connectionLimit: 10,
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'storeDB'
+    host: '47.102.43.202',
+    user: 'storedb',
+    password: 'storedb',
+    database: 'storedb'
   }
 }
