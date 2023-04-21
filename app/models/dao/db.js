@@ -11,7 +11,10 @@ var pool = mysql.createPool(dbConfig);
 
 var db = {};
 
+const DEBUG = false;
+
 db.query = function (sql, params) {
+  DEBUG && console.log('params -- ', params);
 
   return new Promise((resolve, reject) => {
     // 取出链接
@@ -23,13 +26,14 @@ db.query = function (sql, params) {
       }
 
       connection.query(sql, params, function (error, results, fields) {
-        console.log(`${ sql }=>${ params }`);
+        console.log(`${ sql }  ---  `, params);
         // 释放连接
         connection.release();
         if (error) {
           reject(error);
           return;
         }
+        DEBUG && console.log('results -- ', results);
         resolve(results);
       });
 
