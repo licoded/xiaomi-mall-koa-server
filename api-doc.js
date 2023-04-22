@@ -50,6 +50,19 @@ const apiDoc = {
           userName: 'test001',
         },
       },
+      UserIdParams: {
+        type: 'object',
+        properties: {
+          user_id: {
+            description: 'userId',
+            type: 'number',
+          },
+        },
+        required: ['user_id'],
+        default: {
+          user_id: 1,
+        },
+      },
       // for responses
       UserResp: {
         type: 'object',
