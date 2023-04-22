@@ -5,7 +5,7 @@ module.exports = function (worldsService) {
 
   function GET(ctx, next) {
     ctx.status = 200;
-    ctx.body = worldsService.getWorlds(req.query.worldName);
+    ctx.body = worldsService.getWorlds(ctx.query.worldName);
   }
 
   // NOTE: We could also use a YAML string here.
