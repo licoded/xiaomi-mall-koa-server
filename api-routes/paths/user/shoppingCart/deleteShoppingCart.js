@@ -1,4 +1,32 @@
-const shoppingCartController = require('../../../../app/controllers/shoppingCartController');
+const {
+  shoppingCartController,
+  Utils,
+  tags,
+}= require('./commonConfig');
+
+const examples = {
+  success1: {
+    summary: 'delete success',
+    value: {
+      "code": "001",
+      "msg": "删除购物车成功"
+    },
+  },
+  success2: {
+    summary: 'delete success',
+    value: {
+      "code": "002",
+      "msg": "该商品不在购物车"
+    },
+  },
+  fail: {
+    summary: 'delete failed',
+    value: {
+      code: '401',
+      msg: '用户名没有登录，请登录后再操作'
+    },
+  },
+};
 
 module.exports = function () {
   let operations = {
@@ -6,10 +34,10 @@ module.exports = function () {
   };
 
   operations.POST.apiDoc = {
-    tags: ['shoppingCartController'],
+    tags,
 
     // summary is what really display
-    summary: '删除商品到购物车',
+    summary: '添加商品到购物车',
 
     // operationId is not display when summary is set
     // But it must be set, as it's used in the url of Knife4j
@@ -33,11 +61,7 @@ module.exports = function () {
               properties: {
                 code: {
                   type: 'string',
-                  description: [
-                    '001 -> "删除购物车成功"',
-                    '002 -> "该商品不在购物车"',
-                    '401 -> "用户名没有登录，请登录后再操作"',
-                  ].join('<br/>'),
+                  description: Utils.parseExamples2Desc(examples),
                 },
                 message: {
                   type: 'string',
@@ -45,29 +69,7 @@ module.exports = function () {
                 },
               },
             },
-            examples: {
-              success1: {
-                summary: 'delete success',
-                value: {
-                  "code": "001",
-                  "msg": "删除购物车成功"
-                },
-              },
-              success2: {
-                summary: 'delete success',
-                value: {
-                  "code": "002",
-                  "msg": "该商品不在购物车"
-                },
-              },
-              fail: {
-                summary: 'delete failed',
-                value: {
-                  code: '401',
-                  msg: '用户名没有登录，请登录后再操作'
-                },
-              },
-            },
+            examples,
           },
         },
       },
