@@ -12,8 +12,12 @@ module.exports = function (worldsService) {
   GET.apiDoc = {
     // summary is what really display
     summary: 'Returns worlds by name.',
+
     // operationId is not display when summary is set
-    // it may used behind as componentkey OR css id
+    // it may be used behind as componentkey OR css id
+    // Yes, It is used in the url `http://localhost:18002/doc.html#/cloud1/default/getWorlds`  
+    //                               the last word -- `getWorlds` is just the operationId
+    // So, without `operationId` field, the neo4j will crash!
     operationId: 'getWorlds',
     parameters: [
       {
