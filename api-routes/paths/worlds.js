@@ -10,7 +10,10 @@ module.exports = function (worldsService) {
 
   // NOTE: We could also use a YAML string here.
   GET.apiDoc = {
+    // summary is what really display
     summary: 'Returns worlds by name.',
+    // operationId is not display when summary is set
+    // it may used behind as componentkey OR css id
     operationId: 'getWorlds',
     parameters: [
       {
