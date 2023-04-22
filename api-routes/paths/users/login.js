@@ -40,6 +40,7 @@ module.exports = function () {
                 },
                 user: {
                   type: 'object',
+                  description: '{ userName, user_id }',
                   properties: {
                     userName: {
                       description: 'userName',
