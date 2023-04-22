@@ -63,6 +63,23 @@ const apiDoc = {
           user_id: 1,
         },
       },
+      UserProductParams: {
+        type: 'object',
+        properties: {
+          user_id: {
+            description: 'userId',
+            type: 'number',
+          },
+          product_id: {
+            description: 'productId',
+            type: 'number',
+          },
+        },
+        required: ['user_id', 'product_id'],
+        default: {
+          product_id: 1,
+        },
+      },
       // for responses
       UserResp: {
         type: 'object',
