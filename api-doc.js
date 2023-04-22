@@ -50,6 +50,7 @@ const apiDoc = {
           type: 'string',
         },
       },
+      required: ['userName', 'password'],
     }
   },
   paths: {}

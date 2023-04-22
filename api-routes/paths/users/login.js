@@ -23,6 +23,7 @@ module.exports = function () {
         schema: {
           $ref: '#/definitions/UserLoginParams',
         },
+        required: true,
       },
     ],
     responses: {
