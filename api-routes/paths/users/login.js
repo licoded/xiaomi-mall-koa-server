@@ -5,16 +5,12 @@ module.exports = function () {
     POST: UserController.Login,
   };
 
-  // NOTE: We could also use a YAML string here.
   operations.POST.apiDoc = {
     // summary is what really display
     summary: 'Login',
 
     // operationId is not display when summary is set
-    // it may be used behind as componentkey OR css id
-    // Yes, It is used in the url `http://localhost:18002/doc.html#/cloud1/default/getWorlds`  
-    //                               the last word -- `getWorlds` is just the operationId
-    // So, without `operationId` field, the neo4j will crash!
+    // But it must be set, as it's used in the url of Knife4j
     operationId: 'Login',
     parameters: [
       {
@@ -23,7 +19,6 @@ module.exports = function () {
         schema: {
           $ref: '#/definitions/UserLoginParams',
         },
-        required: true,
       },
     ],
     responses: {

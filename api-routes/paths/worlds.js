@@ -17,7 +17,7 @@ module.exports = function (worldsService) {
     // it may be used behind as componentkey OR css id
     // Yes, It is used in the url `http://localhost:18002/doc.html#/cloud1/default/getWorlds`  
     //                               the last word -- `getWorlds` is just the operationId
-    // So, without `operationId` field, the neo4j will crash!
+    // So, without `operationId` field, the Knife4j will crash!
     operationId: 'getWorlds',
     parameters: [
       {
