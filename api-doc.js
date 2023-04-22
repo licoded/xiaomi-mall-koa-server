@@ -6,6 +6,27 @@ const apiDoc = {
     version: '1.0.0'
   },
   definitions: {
+    User: {
+      type: 'object',
+      properties: {
+        'user_id': {
+          description: 'user_id',
+          type: 'integer',
+        },
+        userName: {
+          description: 'userName',
+          type: 'string',
+        },
+        password: {
+          description: 'password',
+          type: 'string',
+        },
+        userPhoneNumber: {
+          description: 'userPhoneNumber',
+          type: 'string',
+        },
+      },
+    },
     World: {
       type: 'object',
       properties: {
@@ -15,6 +36,20 @@ const apiDoc = {
         }
       },
       required: ['name']
+    },
+    // paramemters
+    UserLoginParams: {
+      type: 'object',
+      properties: {
+        userName: {
+          description: 'userName',
+          type: 'string',
+        },
+        password: {
+          description: 'password',
+          type: 'string',
+        },
+      },
     }
   },
   paths: {}
