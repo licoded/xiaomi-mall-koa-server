@@ -8,6 +8,7 @@ const Koa = require('koa');
 const KoaStatic = require('koa-static');
 const KoaBody = require('koa-body');
 const Session = require('koa-session');
+const KoaOpenapi = require('koa-openapi');
 
 let { Port, staticDir } = require('./config');
 
@@ -44,6 +45,16 @@ app.use(KoaBody(koaBodyConfig));
 // 使用路由中间件
 const Routers = require('./app/routers');
 app.use(Routers.routes()).use(Routers.allowedMethods());
+
+KoaOpenapi.initialize({
+  router: Routers,
+  apiDoc: require('./api-doc.js'),
+  dependencies: {
+    worldsService: require('./api-routes/services/worldsService'),
+  },
+  paths: './api-routes/paths'
+  // paths: path.resolve(__dirname, 'api-routes'),
+});
 
 app.listen(Port, () => {
   console.log(`服务器启动在${ Port }端口`);
