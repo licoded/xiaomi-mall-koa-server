@@ -6,6 +6,8 @@ module.exports = function () {
   };
 
   operations.POST.apiDoc = {
+    tags: ['UserController'],
+
     // summary is what really display
     summary: 'FindUserName',
 
