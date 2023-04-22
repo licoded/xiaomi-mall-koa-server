@@ -7,6 +7,10 @@
     "dev": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "nodemonConfig": {
+    "ignore": ["node_modules/**", "docs/**", "public"],
+    "delay": 8000
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
