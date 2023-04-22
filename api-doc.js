@@ -1,66 +1,69 @@
 const apiDoc = {
-  swagger: '2.0',
-  basePath: '/v3',
+  openapi: '3.0.3',
+  servers: [{url: '/v3'}],
   info: {
     title: 'A getting started API.',
     version: '1.0.0'
   },
-  definitions: {
-    User: {
-      type: 'object',
-      properties: {
-        'user_id': {
-          description: 'user_id',
-          type: 'integer',
+  components: {
+    schemas: {
+      World: {
+        type: 'object',
+        properties: {
+          name: {
+            description: 'The name of this world.',
+            type: 'string',
+            default: 'Earth',
+          }
         },
-        userName: {
-          description: 'userName',
-          type: 'string',
+        required: ['name']
+      },
+      // paramemters
+      UserLoginParams: {
+        type: 'object',
+        properties: {
+          userName: {
+            description: 'userName',
+            type: 'string',
+          },
+          password: {
+            description: 'password',
+            type: 'string',
+          },
         },
-        password: {
-          description: 'password',
-          type: 'string',
-        },
-        userPhoneNumber: {
-          description: 'userPhoneNumber',
-          type: 'string',
+        required: ['userName', 'password'],
+        default: {
+          userName: 'test001',
+          password: 'test001',
         },
       },
-    },
-    World: {
-      type: 'object',
-      properties: {
-        name: {
-          description: 'The name of this world.',
-          type: 'string'
-        }
-      },
-      required: ['name']
-    },
-    // paramemters
-    UserLoginParams: {
-      type: 'object',
-      properties: {
-        userName: {
-          description: 'userName',
-          type: 'string',
+      UserNameParams: {
+        type: 'object',
+        properties: {
+          userName: {
+            description: 'userName',
+            type: 'string',
+          },
         },
-        password: {
-          description: 'password',
-          type: 'string',
+        required: ['userName'],
+        default: {
+          userName: 'test001',
         },
       },
-      required: ['userName', 'password'],
-    },
-    UserNameParams: {
-      type: 'object',
-      properties: {
-        userName: {
-          description: 'userName',
-          type: 'string',
+      // for responses
+      UserResp: {
+        type: 'object',
+        properties: {
+          userName: {
+            description: 'userName',
+            type: 'string',
+          },
+          user_id: {
+            description: 'user_id',
+            type: 'object',
+          },
         },
       },
-      required: ['userName'],
     },
   },
   paths: {}
