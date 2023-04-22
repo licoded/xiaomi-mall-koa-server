@@ -9,7 +9,7 @@ module.exports = function () {
     tags: ['UserController'],
 
     // summary is what really display
-    summary: 'FindUserName',
+    summary: '查询用户名是否已被注册',
 
     // operationId is not display when summary is set
     // But it must be set, as it's used in the url of Knife4j
