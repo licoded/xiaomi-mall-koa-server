@@ -80,6 +80,24 @@ const apiDoc = {
           product_id: 1,
         },
       },
+      UpdateCartParams: {
+        type: 'object',
+        properties: {
+          user_id: {
+            description: 'userId',
+            type: 'number',
+          },
+          product_id: {
+            description: 'productId',
+            type: 'number',
+          },
+          num: {
+            description: 'number',
+            type: 'number',
+          },
+        },
+        required: ['user_id', 'product_id', 'num'],
+      },
       // for responses
       UserResp: {
         type: 'object',
