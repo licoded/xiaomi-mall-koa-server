@@ -51,7 +51,17 @@ const apiDoc = {
         },
       },
       required: ['userName', 'password'],
-    }
+    },
+    UserNameParams: {
+      type: 'object',
+      properties: {
+        userName: {
+          description: 'userName',
+          type: 'string',
+        },
+      },
+      required: ['userName'],
+    },
   },
   paths: {}
 };
