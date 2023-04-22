@@ -33,7 +33,11 @@ module.exports = function () {
               properties: {
                 code: {
                   type: 'string',
-                  description: '001 -> "注册成功"<br\>004 -> "用户名已经存在，不能注册"<br\>500 -> "未知错误，注册失败"',
+                  description: [
+                    '001 -> "注册成功"',
+                    '004 -> "用户名已经存在，不能注册"',
+                    '500 -> "未知错误，注册失败"',
+                  ].join('<br/>'),
                 },
                 msg: {
                   type: 'string',

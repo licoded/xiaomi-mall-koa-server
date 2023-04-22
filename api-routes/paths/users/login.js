@@ -33,7 +33,10 @@ module.exports = function () {
               properties: {
                 code: {
                   type: 'string',
-                  description: '001 -> "登录成功"<br\>004 -> "用户名或密码错误"',
+                  description: [
+                    '001 -> "登录成功"',
+                    '004 -> "用户名或密码错误"',
+                  ].join('<br/>'),
                 },
                 msg: {
                   type: 'string',
