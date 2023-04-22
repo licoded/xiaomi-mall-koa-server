@@ -5,11 +5,12 @@
   "main": "app.js",
   "scripts": {
     "dev": "node app.js",
+    "rs-dev": "nodemon --exec npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "nodemonConfig": {
     "ignore": ["node_modules/**", "docs/**", "public"],
-    "delay": 8000
+    "delay": 2500
   },
   "author": "",
   "license": "ISC",
