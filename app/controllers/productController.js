@@ -74,7 +74,7 @@ module.exports = {
     }
   },
   /**
-   * 根据分类id,分页获取商品信息
+   * 根据分类id, 分页获取商品信息
    * @param {Object} ctx
    */
   GetProductByCategory: async ctx => {
@@ -93,7 +93,7 @@ module.exports = {
     }
   },
   /**
-   * 根据搜索条件,分页获取商品信息
+   * 根据搜索条件, 分页获取商品信息
    * @param {Object} ctx
    */
   GetProductBySearch: async ctx => {
@@ -134,7 +134,7 @@ module.exports = {
     }
   },
   /**
-   * 根据商品id,获取商品详细信息
+   * 根据商品id, 获取商品详细信息
    * @param {Object} ctx
    */
   GetDetails: async ctx => {
@@ -148,7 +148,7 @@ module.exports = {
     }
   },
   /**
-   * 根据商品id,获取商品图片,用于食品详情的页面展示
+   * 根据商品id, 获取商品图片, 用于食品详情的页面展示
    * @param {Object} ctx
    */
   GetDetailsPicture: async ctx => {
