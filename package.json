@@ -9,7 +9,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "nodemonConfig": {
-    "ignore": ["node_modules/**", "docs/**", "public"],
+    "ignore": [
+      "node_modules/**",
+      "docs/**",
+      "public"
+    ],
     "delay": 2500
   },
   "author": "",
@@ -17,9 +21,11 @@
   "dependencies": {
     "koa": "^2.11.0",
     "koa-body": "^4.1.1",
+    "koa-generic-session": "^2.3.1",
     "koa-openapi": "^12.1.0",
     "koa-router": "^7.4.0",
     "koa-session": "^5.12.3",
+    "koa-sqlite3-session": "^2.0.2",
     "koa-static": "^5.0.0",
     "mysql": "^2.17.1",
     "request": "^2.88.2",
