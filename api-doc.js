@@ -63,6 +63,63 @@ const apiDoc = {
           'num',
         ],
       },
+      productItem: {
+        type: "object",
+        properties: {
+          product_id: {
+            description: "product_id_desc",
+            type: "number"
+          },
+          product_name: {
+            description: "product_name_desc",
+            type: "string"
+          },
+          category_id: {
+            description: "category_id_desc",
+            type: "number"
+          },
+          product_title: {
+            description: "product_title_desc",
+            type: "string"
+          },
+          product_intro: {
+            description: "product_intro_desc",
+            type: "string"
+          },
+          product_picture: {
+            description: "product_picture_desc",
+            type: "string"
+          },
+          product_price: {
+            description: "product_price_desc",
+            type: "number"
+          },
+          product_selling_price: {
+            description: "product_selling_price_desc",
+            type: "number"
+          },
+          product_num: {
+            description: "product_num_desc",
+            type: "number"
+          },
+          product_sales: {
+            description: "product_sales_desc",
+            type: "number"
+          }
+        },
+        required: [
+          "product_id",
+          "product_name",
+          "category_id",
+          "product_title",
+          "product_intro",
+          "product_picture",
+          "product_price",
+          "product_selling_price",
+          "product_num",
+          "product_sales"
+        ]
+      },
       // paramemters
       UserLoginParams: {
         type: 'object',
