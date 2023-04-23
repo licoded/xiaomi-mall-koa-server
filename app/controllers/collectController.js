@@ -72,7 +72,8 @@ module.exports = {
     if (collect.length == 0) {
       ctx.body = {
         code: '002',
-        msg: '该用户没有收藏的商品'
+        msg: '该用户没有收藏的商品',
+        collectList: [],
       }
       return;
     }
