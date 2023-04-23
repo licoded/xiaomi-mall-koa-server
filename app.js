@@ -5,6 +5,7 @@
  * @LastEditTime: 2020-04-07 23:40:51
  */
 const Koa = require('koa');
+const cors = require('@koa/cors');
 const KoaStatic = require('koa-static');
 const KoaBody = require('koa-body');
 const Session = require('koa-generic-session');
@@ -13,6 +14,7 @@ const KoaOpenapi = require('koa-openapi');
 let { Port, staticDir } = require('./config');
 
 let app = new Koa();
+app.use(cors());
 
 // 处理异常
 const error = require('./app/middleware/error');
