@@ -7,7 +7,7 @@
 const Koa = require('koa');
 const KoaStatic = require('koa-static');
 const KoaBody = require('koa-body');
-const Session = require('koa-session');
+const Session = require('koa-generic-session');
 const KoaOpenapi = require('koa-openapi');
 
 let { Port, staticDir } = require('./config');

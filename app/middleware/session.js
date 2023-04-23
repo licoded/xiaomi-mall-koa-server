@@ -5,18 +5,8 @@
  * @LastEditors: hai-27
  * @LastEditTime: 2020-04-07 22:29:28
  */
-let store = {
-  storage: {},
-  set (key, session) {
-    this.storage[key] = session;
-  },
-  get (key) {
-    return this.storage[key];
-  },
-  destroy (key) {
-    delete this.storage[key];
-  }
-}
+const SQLiteStore = require('koa-sqlite3-session');
+
 let CONFIG = {
   key: 'koa:session',
   maxAge: 86400000,
@@ -27,7 +17,7 @@ let CONFIG = {
   rolling: false,
   renew: false,
   sameSite: null,
-  store
+  store: new SQLiteStore('./session.db'),
 }
 
 module.exports = CONFIG;
