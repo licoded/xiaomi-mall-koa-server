@@ -18,6 +18,51 @@ const apiDoc = {
         },
         required: ['name']
       },
+      ProductItem: {
+        type: 'object',
+        properties: {
+          id: {
+            description: '',
+            type: 'number',
+          },
+          productID: {
+            description: '',
+            type: 'number',
+          },
+          productName: {
+            description: '',
+            type: 'string',
+          },
+          productImg: {
+            description: '',
+            type: 'string', // path
+          },
+          price: {
+            description: '',
+            type: 'number',
+          },
+          num: {
+            description: '',
+            type: 'number',
+          },
+          maxNum: {
+            description: '',
+            type: 'number',
+          },
+          check: {
+            description: '',
+            type: 'boolean',
+          },
+        },
+        required: [
+          'id',
+          'productID',
+          'productName',
+          'productImg',
+          'price',
+          'num',
+        ],
+      },
       // paramemters
       UserLoginParams: {
         type: 'object',
@@ -97,6 +142,23 @@ const apiDoc = {
           },
         },
         required: ['user_id', 'product_id', 'num'],
+      },
+      OrderParams: {
+        type: 'object',
+        properties: {
+          products: {
+            type: 'array',
+            description: '',
+            items: {
+              $ref: "#/components/schemas/ProductItem",
+            },
+          },
+          user_id: {
+            type: 'string',
+            description: 'userId',
+          },
+        },
+        required: ['products', 'user_id'],
       },
       // for responses
       UserResp: {
