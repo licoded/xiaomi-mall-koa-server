@@ -18,7 +18,7 @@ const apiDoc = {
         },
         required: ['name']
       },
-      ProductItem: {
+      OrderItem: {
         type: 'object',
         properties: {
           id: {
@@ -150,7 +150,7 @@ const apiDoc = {
             type: 'array',
             description: '',
             items: {
-              $ref: "#/components/schemas/ProductItem",
+              $ref: "#/components/schemas/OrderItem",
             },
           },
           user_id: {
