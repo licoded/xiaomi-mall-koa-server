@@ -18,6 +18,11 @@ const apiDoc = {
         },
         required: ['name']
       },
+      EmptyObject: {
+        type: 'object',
+        properties: {
+        },
+      },
       OrderItem: {
         type: 'object',
         properties: {
@@ -120,6 +125,48 @@ const apiDoc = {
           "product_sales"
         ]
       },
+      ProductPictureItem: {
+        type: "object",
+        properties: {
+          id: {
+            description: "id_desc",
+            type: "number"
+          },
+          product_id: {
+            description: "product_id_desc",
+            type: "number"
+          },
+          product_picture: {
+            description: "product_picture_desc",
+            type: "string"
+          },
+          intro: {
+            description: "intro_desc",
+            type: "string"
+          }
+        },
+        required: [
+          "id",
+          "product_id",
+          "product_picture",
+          "intro"
+        ]
+      },
+      CategoryItem: {
+        type: 'object',
+        properties: {
+          category_id: {
+            description: 'category_id',
+            type: 'number',
+          },
+        },
+      },
+      // CategoryArray: {
+      //   type: 'array',
+      //   items: {
+      //     $ref: '/#/components/schemas/CategoryItem',
+      //   },
+      // },
       // paramemters
       UserLoginParams: {
         type: 'object',
@@ -163,6 +210,19 @@ const apiDoc = {
         required: ['user_id'],
         default: {
           user_id: 1,
+        },
+      },
+      ProductIDParams: {
+        type: 'object',
+        properties: {
+          productID: {
+            description: 'productID',
+            type: 'number',
+          },
+        },
+        required: ['productID'],
+        default: {
+          productID: 1,
         },
       },
       UserProductParams: {
@@ -216,6 +276,70 @@ const apiDoc = {
           },
         },
         required: ['products', 'user_id'],
+      },
+      productPageParams: {
+        type: 'object',
+        properties: {
+          pageSize: {
+            description: 'pageSize',
+            type: 'number',
+            default: 15,
+          },
+          currentPage: {
+            description: 'currentPage',
+            type: 'number',
+            default: 1,
+          },
+          categoryID: {
+            description: 'categoryID',
+            type: 'array',
+            items: {
+              type: 'number',
+            }
+          },
+        },
+      },
+      productFuzzySearchPageParams: {
+        type: 'object',
+        properties: {
+          pageSize: {
+            description: 'pageSize',
+            type: 'number',
+            default: 15,
+          },
+          currentPage: {
+            description: 'currentPage',
+            type: 'number',
+            default: 1,
+          },
+          search: {
+            description: 'searchKey',
+            type: 'string',
+          },
+        },
+      },
+      categoryNameParams: {
+        type: 'object',
+        properties: {
+          categoryName: {
+            description: 'categoryName',
+            type: 'string',
+            default: '电视机',
+          },
+        },
+      },
+      categoryNameArrayParams: {
+        type: 'object',
+        properties: {
+          categoryName: {
+            description: 'categoryName',
+            type: 'array',
+            default: [ "空调", "洗衣机" ],
+            items: {
+              type: 'string'
+            },
+          },
+        },
       },
       // for responses
       UserResp: {
